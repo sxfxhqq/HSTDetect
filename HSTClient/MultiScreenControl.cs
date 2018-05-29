@@ -24,6 +24,7 @@ namespace HSTClient
 {
     public partial class MultiScreenControl : UserControl
     {
+        public Dictionary<Point, PictureBox> dictionary = new Dictionary<Point, PictureBox>();
         public IntPtr[] handles = new IntPtr[9];
         public MultiScreenControl()
         {
@@ -41,6 +42,15 @@ namespace HSTClient
             handles[6] = this.pictureBox7.Handle;
             handles[7] = this.pictureBox8.Handle;
             handles[8] = this.pictureBox9.Handle;
+            dictionary.Add(this.pictureBox1.Location, this.pictureBox1);
+            dictionary.Add(this.pictureBox2.Location, this.pictureBox2);
+            dictionary.Add(this.pictureBox3.Location, this.pictureBox3);
+            dictionary.Add(this.pictureBox4.Location, this.pictureBox4);
+            dictionary.Add(this.pictureBox5.Location, this.pictureBox5);
+            dictionary.Add(this.pictureBox6.Location, this.pictureBox6);
+            dictionary.Add(this.pictureBox7.Location, this.pictureBox7);
+            dictionary.Add(this.pictureBox8.Location, this.pictureBox8);
+            dictionary.Add(this.pictureBox9.Location, this.pictureBox9);
         }
 
         private void MultiScreenControl_SizeChanged(object sender, EventArgs e)

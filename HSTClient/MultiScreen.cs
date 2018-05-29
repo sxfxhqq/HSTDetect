@@ -237,5 +237,45 @@ namespace HSTClient
                 item.NodeFont = new Font("微软雅黑", 9, FontStyle.Regular);
             }
         }
+        private PictureBox pb;
+        int index = 0;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.button2.Visible = false;
+            this.comboBox1.Visible = true;
+        }
+
+        private void pb_DoubleClick(object sender, EventArgs e)
+        {
+            if (frm != null)
+            {
+                frm.Controls.Clear();
+                this.msc.Controls.Add(pb);
+                pb.Dock = DockStyle.None;
+                pb.Location = msc.dictionary.Keys.ElementAt(index);
+                frm.Close();
+                frm = null;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.button2.Visible = true;
+            this.comboBox1.Visible = false;
+            if (frm == null)
+            {
+                frm = new Client.FullScreen();
+            }
+            if (int.TryParse(this.comboBox1.Text.ToString(), out index))
+            {
+                index -= 1;
+                pb = msc.dictionary.Values.ElementAt(index);
+                frm.Controls.Add(pb);
+                pb.DoubleClick += pb_DoubleClick;
+                pb.Dock = DockStyle.Fill;
+                frm.ShowDialog();
+            }
+        }
     }
+
 }

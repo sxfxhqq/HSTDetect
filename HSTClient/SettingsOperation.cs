@@ -194,7 +194,8 @@ namespace HSTClient
                 {
                     for (int i = 0; i < dt_new.Rows.Count; i++)
                     {
-                        string str = string.Format("UPDATE TB_PARAM SET CamID={0},Position='{1}',RTSPAdress='{2}',Url='{3}',UserName='{4}',Password='{5}',Port='{6}',VideoWidth='{7}',VideoHeight='{8}',Remarks='{9}' ,DensityThreshold={10} ,SpeedThresshold={11} WHERE ID={10}",
+                        Console.WriteLine(dt.Rows[i]["CamID"].ToString()+".."+ dt.Rows[i]["Position"].ToString()+".."+ dt.Rows[i]["RTSPAdress"].ToString()+".."+ dt.Rows[i]["Url"].ToString()+".."+ dt.Rows[i]["UserName"].ToString()+".."+ dt.Rows[i]["Password"].ToString()+".."+ dt.Rows[i]["Port"].ToString()+".."+ dt.Rows[i]["VideoWidth"].ToString()+".."+ dt.Rows[i]["VideoHeight"].ToString()+".."+ dt.Rows[i]["Remarks"].ToString()+".."+ dt.Rows[i]["DensityThreshold"].ToString()+".."+ dt.Rows[i]["SpeedThresshold"].ToString()+".."+ dt.Rows[i]["ID"].ToString());
+                        string str = string.Format("UPDATE TB_PARAM SET CamID={0},Position='{1}',RTSPAdress='{2}',Url='{3}',UserName='{4}',Password='{5}',Port='{6}',VideoWidth='{7}',VideoHeight='{8}',Remarks='{9}' ,DensityThreshold={10} ,SpeedThresshold={11} WHERE ID={12}",
                                                                dt.Rows[i]["CamID"], dt.Rows[i]["Position"], dt.Rows[i]["RTSPAdress"], dt.Rows[i]["Url"], dt.Rows[i]["UserName"], dt.Rows[i]["Password"], dt.Rows[i]["Port"], dt.Rows[i]["VideoWidth"], dt.Rows[i]["VideoHeight"], dt.Rows[i]["Remarks"], dt.Rows[i]["DensityThreshold"], dt.Rows[i]["SpeedThresshold"], dt.Rows[i]["ID"]);
                         try
                         {
