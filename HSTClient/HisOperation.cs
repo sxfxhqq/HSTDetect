@@ -59,6 +59,8 @@ namespace HSTClient
                 {
                     ChangeType(dt, HD);
                 }
+                else
+                    HD.TotalVolumeList.Clear();
             }
             catch(Exception ex)
             {

@@ -164,11 +164,13 @@ namespace HSTClient
                     if(operation.showWarning(Client.HSTDataClass.Speed, Client.HSTDataClass.Density, threshold))
                     {
                         this.LB_State.Text = "异常";
+                        this.LB_State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(97)))), ((int)(((byte)(77)))));
                         this.Pic_State.Image = Image.FromFile(@"img/warning_red.png");
                     }
                     else
                     {
                         this.LB_State.Text = "正常 ";
+                        this.LB_State.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(114)))), ((int)(((byte)(169)))));
                         this.Pic_State.Image = Image.FromFile(@"img/warning.png");
                     }
                     this.LB_DBState.Text = "正常";
